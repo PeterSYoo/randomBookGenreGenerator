@@ -1,8 +1,11 @@
+const $genre1Title = $(`.genre1-content`);
+
 $.ajax({
   url:'https://www.googleapis.com/books/v1/volumes?q=subject:Science+Fiction&orderBy=newest&key=AIzaSyA2fp1D9TrSW7x5WJy_gOEkk5ANBF7xS6o'
 }).then(
   (data) => {
-   console.log(data);
+   console.log(data.items[0].volumeInfo.title);
+   $genre1Title.text(data.items[0].volumeInfo.title);
   },
   (error) => {
    console.log('bad request', error);
