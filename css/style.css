@@ -1,0 +1,61 @@
+html, body {
+    height: 100%;
+    background-color: #cbbeb5;
+    margin: auto;
+}
+
+.container {
+  display: grid;
+  height: 100vh;
+  margin: 0 3rem 0 3rem;
+  grid-template-rows: 0.25fr 3.5fr 0.25fr;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+  "nav"
+  "main"
+  "footer"
+}
+
+.container > nav {
+  background-color: #423f3b;
+
+  grid-area: nav;
+}
+
+.container > main {
+  background-color: #cbbeb5;
+  grid-area: main;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-gap: 0.1rem;
+  grid-template-areas:
+  "mostPopular"
+  "sciFi"
+  "mystery"
+}
+
+.mostPopular {
+  background-color: #525266;
+  grid-area: mostPopular;
+}
+
+.sciFi {
+  background-color: #525266;
+  grid-area: sciFi;
+}
+
+.mystery {
+  background-color: #525266;
+  grid-area: mystery;
+}
+
+.container > footer {
+  background-color: #cbbeb5;
+  grid-area: footer;
+}
+
+.flex-ctr {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
