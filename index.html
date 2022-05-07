@@ -1,24 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Trocchi&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./css/style.css">
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous" defer></script>
   <script defer src="./js/app.js" defer></script>
-  <title>Just Books</title>
+  <title>Random Book Generator</title>
 </head>
 
 <body>
-  <div class = "container">
+  <div class="container">
     <nav>
-      <div>HOME</div>
+      <div class="title">Random Lit</div>
+      <div class="blank"></div>
+      <div class="generate"><button>Generate</button></div>
     </nav>
     <main>
-      <div class="mostPopular"></div>
-      <div class="sciFi"></div>
-      <div class="mystery"></div>
+      <div class="genre1">Genre 1</div>
+      <div class="genre2">Genre 2</div>
+      <div class="genre3">Genre 3</div>
     </main>
     <footer>FOOTER</footer>
   </div>

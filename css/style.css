@@ -1,15 +1,22 @@
+:root {
+  --main-radius: 0 0 5px 5px;
+  --main-padding: 15px;
+}
+
 html, body {
     height: 100%;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
     background-color: #cbbeb5;
-    margin: auto;
 }
 
 .container {
   display: grid;
-  height: 100vh;
-  margin: 0 3rem 0 3rem;
   grid-template-rows: 0.25fr 3.5fr 0.25fr;
   grid-template-columns: 1fr;
+  margin: 0 15px 0 15px;
   grid-template-areas:
   "nav"
   "main"
@@ -17,45 +24,79 @@ html, body {
 }
 
 .container > nav {
-  background-color: #423f3b;
-
   grid-area: nav;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+  "title blank generate"
+}
+
+.title {
+background-color: #423f3b;
+border-radius:var(--main-radius);
+padding:var(--main-padding);
+grid-area: title;
+font-family: 'Trocchi', serif;
+color: #cbbeb5;
+font-size: 30px;
+letter-spacing: -2px;
+justify-self: start;
+align-self: end;
+position:relative;
+margin: 15px 0 0 15px; 
+}
+
+.blank {
+}
+
+.generate {
+background-color: #423f3b;
+border-radius:var(--main-radius);
+padding:var(--main-padding);
+grid-area: generate;
+justify-self: start;
+align-self: end;
+position:relative;
+margin: 0 15px 0 0; 
 }
 
 .container > main {
   background-color: #cbbeb5;
+  border-radius:var(--main-radius);
+  margin: -10px 0 0 0;
   grid-area: main;
   display: grid;
   grid-template-rows: 1fr 1fr 1fr;
-  grid-gap: 0.1rem;
+  grid-gap: 1px;
   grid-template-areas:
-  "mostPopular"
-  "sciFi"
-  "mystery"
+  "genre1"
+  "genre2"
+  "genre3"
 }
 
-.mostPopular {
+.genre1 {
   background-color: #525266;
-  grid-area: mostPopular;
+  border-radius:var(--main-radius);
+  padding:var(--main-padding);
+  grid-area: genre1;
 }
 
-.sciFi {
+.genre2 {
   background-color: #525266;
-  grid-area: sciFi;
+  border-radius:var(--main-radius);
+  padding:var(--main-padding);
+  grid-area: genre2;
 }
 
-.mystery {
+.genre3 {
   background-color: #525266;
-  grid-area: mystery;
+  border-radius:var(--main-radius);
+  padding:var(--main-padding);
+  grid-area: genre3;
 }
 
 .container > footer {
   background-color: #cbbeb5;
+  padding:var(--main-padding);
   grid-area: footer;
-}
-
-.flex-ctr {
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
