@@ -17,7 +17,7 @@ html, body {
   display: grid;
   grid-template-rows: 0.25fr 3.5fr 0.25fr;
   grid-template-columns: 1fr;
-  margin: 0 15px 0 15px;
+  margin: 0 200px 0 200px;
   grid-template-areas:
   "nav"
   "main"
@@ -29,10 +29,11 @@ html, body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-areas:
-  "title blank generate"
+  "title generate"
 }
 
 .title {
+  z-index: 1;
   grid-area: title;
   background-color: #423f3b;
   border-radius:var(--main-radius);
@@ -47,19 +48,50 @@ html, body {
   margin: 15px 0 0 15px; 
 }
 
-.blank {
-}
-
 .generate {
+  z-index: 1;
   grid-area: generate;
   background-color: #423f3b;
   border-radius:var(--main-radius);
-  padding:var(--nav-padding);
-  justify-self: start;
+  justify-self: end;
   align-self: end;
   position:relative;
+  padding: 15px 0 15px 30px;
   margin: 0 15px 0 0; 
 }
+
+.btnGenerate {
+  background-color: #525266;
+  color: #cbbeb5;
+  font-family: 'Trocchi', serif;
+  font-size: 15px;
+  letter-spacing: 0px;
+}
+
+.ribbon {
+  z-index: -1;
+  right: 40px;
+  top: 15px;
+  position: relative;
+  width: 0px;
+  height: 35px;
+  background-color: transparent;
+  border: solid 15px #B13A22;
+  border-bottom: solid 15px transparent;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  transition: all 0.2s;
+  /* cursor: pointer; */
+}
+
+/* .ribbon:hover {
+  height: 65px;
+}
+
+.ribbon:active {
+  border-color: #d00;
+  border-bottom-color: transparent;
+} */
 
 .container > main {
   grid-area: main;
@@ -102,4 +134,16 @@ html, body {
   background-color: #cbbeb5;
   padding:var(--main-padding);
   justify-items: end;
+}
+
+@media only screen and (max-width: 1450px) {
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.25fr 3.5fr 0.25fr;
+    margin: 0 1% 0 1%;
+    grid-template-areas:
+    "nav"
+    "main"
+    "footer"
+  }
 }
