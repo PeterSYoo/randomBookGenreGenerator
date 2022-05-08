@@ -98,42 +98,23 @@ html, body {
   "genre3"
 }
 
-.genre1 {
+.genre {
   grid-area: genre1;
+  display: grid;
   background-color: #525266;
   border-radius:var(--main-radius);
-  padding: 5px 15px 15px 20px;
+  padding: 5px 15px 55px 20px;
   font-family: 'Trocchi', serif;
   color: #cbbeb5;
 }
 
 #bookList {
   display: grid;
-  grid-template-columns: minmax(150px, 1fr) minmax(150px, 1fr) minmax(150px, 1fr) minmax(150px, 1fr);
+  grid-template-columns: minmax(150px, 1fr) minmax(150px, 1fr) minmax(150px, 1fr) minmax(150px, 1fr) minmax(150px, 1fr);
   color: #cbbeb5;
   font-family: Arial, Helvetica, sans-serif;
   font-size: small;
-  margin: 0 0 0 15px;
-}
-
-.genre2 {
-  grid-area: genre2;
-  background-color: #525266;
-  border-radius:var(--main-radius);
-  padding:var(--main-padding);
-  color: #b6b6cf;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: small;
-}
-
-.genre3 {
-  grid-area: genre3;
-  background-color: #525266;
-  border-radius:var(--main-radius);
-  padding:var(--main-padding);
-  color: #b6b6cf;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: small;
+  margin: 0 0 0 30px;
 }
 
 .container > footer {
@@ -142,9 +123,10 @@ html, body {
   background-color: #cbbeb5;
   padding:var(--main-padding);
   justify-items: end;
+  margin: 0 0 25px 0;
 }
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1000px) {
   .container {
     display: grid;
     grid-template-columns: 1fr;
@@ -170,7 +152,7 @@ html, body {
   }
 }
 
-@media only screen and (max-width: 626px) {
+@media only screen and (min-width: 0px) and (max-width: 450px) {
   #bookList {
     display: grid;
     grid-template-columns: minmax(100px, 1fr) minmax(100px, 1fr);
@@ -178,6 +160,30 @@ html, body {
     font-family: 'Source Sans Pro', sans-serif; 
     font-weight: bold;
     margin: 0;
+  }
+}
+
+@media only screen and (min-width: 451px) and (max-width: 768px) {
+  #bookList {
+    display: grid;
+    grid-template-columns: minmax(100px, 1fr) minmax(100px, 1fr) minmax(100px, 1fr);
+    color: #ffffff;
+    font-family: 'Source Sans Pro', sans-serif; 
+    font-weight: bold;
+    margin: 0;
+  }
+}
+
+@media only screen and (min-width: 1636px) {
+  .container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    margin: 0 400px 0 400px;
+    grid-template-areas:
+    "nav"
+    "main"
+    "footer"
   }
 }
 
