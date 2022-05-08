@@ -60,7 +60,7 @@ html, body {
   margin: 0 15px 0 0;
 }
 
-.btnGenerate {
+#btnGenerate {
   background-color: #525266;
   color: #cbbeb5;
   font-family: 'Trocchi', serif;
@@ -103,14 +103,17 @@ html, body {
   background-color: #525266;
   border-radius:var(--main-radius);
   padding: 5px 15px 15px 20px;
+  font-family: 'Trocchi', serif;
+  color: #cbbeb5;
 }
 
 #bookList {
   display: grid;
   grid-template-columns: minmax(150px, 1fr) minmax(150px, 1fr) minmax(150px, 1fr) minmax(150px, 1fr);
-  color: #ffffff;
-  font-family: 'Source Sans Pro', sans-serif; 
-  font-weight: bold;
+  color: #cbbeb5;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: small;
+  margin: 0 0 0 15px;
 }
 
 .genre2 {
@@ -119,8 +122,8 @@ html, body {
   border-radius:var(--main-radius);
   padding:var(--main-padding);
   color: #b6b6cf;
-  font-family: 'Source Sans Pro', sans-serif; 
-  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: small;
 }
 
 .genre3 {
@@ -129,8 +132,8 @@ html, body {
   border-radius:var(--main-radius);
   padding:var(--main-padding);
   color: #b6b6cf;
-  font-family: 'Source Sans Pro', sans-serif; 
-  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: small;
 }
 
 .container > footer {
@@ -174,5 +177,26 @@ html, body {
     color: #ffffff;
     font-family: 'Source Sans Pro', sans-serif; 
     font-weight: bold;
+    margin: 0;
   }
+}
+
+a:link { 
+  text-decoration: underline; 
+  color: #ffffff;
+}
+
+a:visited { 
+  text-decoration: none; 
+  color: #aaaace;
+}
+
+a:hover { 
+  text-decoration: none; 
+  color: #ffffff;
+}
+
+a:active { 
+  text-decoration: none; 
+  color: #ffffff;
 }
