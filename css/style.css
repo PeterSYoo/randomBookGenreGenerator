@@ -108,6 +108,10 @@ html, body {
   color: #cbbeb5;
 }
 
+#genreTitle {
+  margin: 0 0 0 12px;
+}
+
 #bookList {
   display: grid;
   grid-template-columns: minmax(150px, 1fr) minmax(150px, 1fr) minmax(150px, 1fr) minmax(150px, 1fr) minmax(150px, 1fr);

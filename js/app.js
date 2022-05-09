@@ -14,6 +14,8 @@ const genre = [
   `+subject:Mystery&orderBy=newest`,
   `+subject:Action_Adventure&orderBy=newest`,
   `+subject:Fantasy&orderBy=newest`,
+  `+subject:History&orderBy=newest`,
+  `+subject:Biography&orderBy=newest`,
 ]
 
 // Shuffles the genre Array
@@ -39,7 +41,7 @@ $.ajax({
   url: bookUrl + shuffled(genre) + maxResults + key,
 }).then(
   (data) => {
-    $(`#genreH4`).html(`<h4>${data.items[0].volumeInfo.categories}</h4>`)
+    $(`#genreH4`).html(`<h4 id="genreTitle">${data.items[0].volumeInfo.categories}</h4>`)
     console.log(data.items.length)
     const loop = (data) => {for (let i = 0; i < data.items.length; i++) {
       const bookImg = () => {
@@ -78,7 +80,7 @@ $(document).on(`click`, `#btnGenerate`, () => {
     url: bookUrl + shuffled(genre) + maxResults + key,
   }).then(
     (data) => {
-      $(`#genreH4`).html(`<h4>${data.items[0].volumeInfo.categories}</h4>`)
+      $(`#genreH4`).html(`<h4 id="genreTitle">${data.items[0].volumeInfo.categories}</h4>`)
       $outputList.empty();
       const loop = (data) => {for (let i = 0; i < data.items.length; i++) {
         const bookImg = () => {
