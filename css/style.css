@@ -163,7 +163,7 @@ html, body {
   }
 }
 
-@media only screen and (min-width: 451px) and (max-width: 768px) {
+@media only screen and (min-width: 451px) and (max-width: 802px) {
   #bookList {
     display: grid;
     grid-template-columns: minmax(100px, 1fr) minmax(100px, 1fr) minmax(100px, 1fr);

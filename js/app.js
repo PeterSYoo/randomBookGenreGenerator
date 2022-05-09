@@ -4,13 +4,19 @@ const key = `&key=AIzaSyA2fp1D9TrSW7x5WJy_gOEkk5ANBF7xS6o`
 const placeHldr = `<img src="https://via.placeholder.com/128">`
 const $outputList = $(`#bookList`);
 
+// List of Genre's as elements in an Array
 const genre = [
   `+subject:CSS&orderBy=newest`,
   `+subject:HTML&orderBy=newest`,
   `+subject:Python&orderBy=newest`,
   `+subject:Javascript&orderBy=newest`,
+  `+subject:Science_Fiction&orderBy=newest`,
+  `+subject:Mystery&orderBy=newest`,
+  `+subject:Action_Adventure&orderBy=newest`,
+  `+subject:Fantasy&orderBy=newest`,
 ]
 
+// Shuffles the genre Array
 const shuffle = (array) => {
   var m = array.length, t, i;
   while (m) {
@@ -22,11 +28,13 @@ const shuffle = (array) => {
   return array;
 }
 
+// Returns the first index position of the Shuffled Array
 const shuffled = () => {
   const shuf = shuffle(genre);
   return shuf[0]
 }
 
+// On page load
 $.ajax({
   url: bookUrl + shuffled(genre) + maxResults + key,
 }).then(
@@ -64,8 +72,8 @@ $.ajax({
   }
 );
 
+// Clicking Generate button randomly generates Books
 $(document).on(`click`, `#btnGenerate`, () => {
-  // let genre = `+subject:Action`
   $.ajax({
     url: bookUrl + shuffled(genre) + maxResults + key,
   }).then(
@@ -103,6 +111,3 @@ $(document).on(`click`, `#btnGenerate`, () => {
     }
   );
 })
-
-// Generator button on click replaces Genre 1 section with a new random Genre and pulls data from API and lists them onto the page.
-// Also changes the name of the Genre at the top of the page.
