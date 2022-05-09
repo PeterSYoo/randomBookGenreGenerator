@@ -22,5 +22,3 @@ Randomly generates Books by pulling data from Google's Book API. It pulls the Ti
 
 ## Getting Started:
 [Link to App](https://resplendent-semifreddo-3124d4.netlify.app/)
-Hit the Generate button to randomly generate a new genre of Books and list them on the page.
-
