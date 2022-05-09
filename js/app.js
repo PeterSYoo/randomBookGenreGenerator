@@ -16,6 +16,15 @@ const genre = [
   `+subject:Fantasy&orderBy=newest`,
   `+subject:History&orderBy=newest`,
   `+subject:Biography&orderBy=newest`,
+  `+subject:Crime_Thriller&orderBy=newest`,
+  `+subject:Horror&orderBy=newest`,
+  `+subject:Dystopian&orderBy=newest`,
+  `+subject:Cooking&orderBy=newest`,
+  `+subject:Law&orderBy=newest`,
+  `+subject:Travel&orderBy=newest`,
+  `+subject:Art_Photography&orderBy=newest`,
+  `+subject:Health_Fitness&orderBy=newest`,
+  `+subject:Business&orderBy=newest`,
 ]
 
 // Shuffles the genre Array
