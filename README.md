@@ -14,12 +14,12 @@ Randomly generates Books by Genre from Google's Book API. It pulls the Title, Au
 
 ## Screenshots:
 
-![alt text](https://i.imgur.com/ubSdhrr.png)
+![alt text](https://i.imgur.com/ceqpgxl.png)
 > Hitting the Generate button randomly generates a new list of Books of a random Genre.
 ![alt text](https://i.imgur.com/EH8Cr9O.png)
 
 > New List of a random Genre after pressing the button.
-![alt text](https://i.imgur.com/FKIiSFa.png)
+![alt text](https://i.imgur.com/1Ym9yB7.png)
 
 
 ## Getting Started:
