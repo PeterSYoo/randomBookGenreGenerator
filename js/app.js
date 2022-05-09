@@ -22,7 +22,8 @@ const genre = [
   `+subject:Cooking&orderBy=newest`,
   `+subject:Law&orderBy=newest`,
   `+subject:Travel&orderBy=newest`,
-  `+subject:Art_Photography&orderBy=newest`,
+  `+subject:Art&orderBy=newest`,
+  `+subject:Photography&orderBy=newest`,
   `+subject:Health_Fitness&orderBy=newest`,
   `+subject:Business&orderBy=newest`,
 ]
