@@ -1,5 +1,5 @@
 # **Random Book Genre Generator**
-Randomly generates Books by pulling data from Google's Book API. It pulls the Title, Author, Publisher and a Cover image. Cover image links to the Google Book source and another link at the bottom.
+Randomly generates Books by Genre from Google's Book API. It pulls the Title, Author, Publisher and a Cover image. Cover image links to the Google Book source and another link at the bottom.
 
 ## Technologies Used:
 - HTML5
