@@ -46,13 +46,20 @@ const shuffled = () => {
   return shuf[0]
 }
 
+const genreShuffled = shuffled(genre);
+
+// Extracts only the Subject name from the array element
+const sliced = genreShuffled.slice(
+  genreShuffled.indexOf(`:`) + 1,
+  genreShuffled.lastIndexOf(`&`),
+)
+
 // On page load
 $.ajax({
-  url: bookUrl + shuffled(genre) + maxResults + key,
+  url: bookUrl + genreShuffled + maxResults + key,
 }).then(
   (data) => {
-    $(`#genreH4`).html(`<h4 id="genreTitle">${data.items[0].volumeInfo.categories}</h4>`)
-    console.log(data.items.length)
+    $(`#genreH4`).html(`<h4 id="genreTitle">${sliced.replace(`_`, ` `)}</h4>`)
     const loop = (data) => {for (let i = 0; i < data.items.length; i++) {
       const bookImg = () => {
         if (data.items[i].volumeInfo.imageLinks) {
@@ -86,11 +93,33 @@ $.ajax({
 
 // Clicking Generate button randomly generates Books
 $(document).on(`click`, `#btnGenerate`, () => {
+  const shuffle = (array) => {
+    let m = array.length, t, i;
+    while (m) {
+      i = Math.floor(Math.random() * m--);
+      t = array[m];
+      array[m] = array[i];
+      array[i] = t;
+    }
+    return array;
+  }
+  
+  const shuffled = () => {
+    const shuf = shuffle(genre);
+    return shuf[0]
+  }
+  
+  const genreShuffled = shuffled(genre);
+  
+  const sliced = genreShuffled.slice(
+    genreShuffled.indexOf(`:`) + 1,
+    genreShuffled.lastIndexOf(`&`),
+  )
   $.ajax({
-    url: bookUrl + shuffled(genre) + maxResults + key,
+    url: bookUrl + genreShuffled + maxResults + key,
   }).then(
     (data) => {
-      $(`#genreH4`).html(`<h4 id="genreTitle">${data.items[0].volumeInfo.categories}</h4>`)
+      $(`#genreH4`).html(`<h4 id="genreTitle">${sliced.replace(`_`, ` `)}</h4>`)
       $outputList.empty();
       const loop = (data) => {for (let i = 0; i < data.items.length; i++) {
         const bookImg = () => {
