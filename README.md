@@ -21,8 +21,8 @@ Randomly generates Books by Genre from Google's Book API by Newest. It pulls the
 
 <p align="center"><img src="https://i.imgur.com/lrtUuBG.png"></p>
 
-- New List of a random Genre after pressing the button.
+<p align="left">- New List of a random Genre after pressing the button.</p>
 
 ## Getting Started:
 
-[Link to App](https://resplendent-semifreddo-3124d4.netlify.app/)
+<a href="https://resplendent-semifreddo-3124d4.netlify.app/" target="_blank">Link to App</a>
