@@ -16,7 +16,7 @@ const genre = [
   `+subject:Fantasy&orderBy=newest`,
   `+subject:History&orderBy=newest`,
   `+subject:Biography&orderBy=newest`,
-  `+subject:Crime_Thriller&orderBy=newest`,
+  `+subject:True_Crime&orderBy=newest`,
   `+subject:Horror&orderBy=newest`,
   `+subject:Dystopian&orderBy=newest`,
   `+subject:Cooking&orderBy=newest`,
@@ -26,6 +26,11 @@ const genre = [
   `+subject:Photography&orderBy=newest`,
   `+subject:Health_Fitness&orderBy=newest`,
   `+subject:Business&orderBy=newest`,
+  `+subject:Cats&orderBy=newest`,
+  `+subject:Dogs&orderBy=newest`,
+  `+subject:Birds&orderBy=newest`,
+  `+subject:Turtles&orderBy=newest`,
+  `+subject:Squirrels&orderBy=newest`,
 ]
 
 // Shuffles the genre Array
