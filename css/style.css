@@ -174,12 +174,12 @@ html, body {
   }
 }
 
-@media only screen and (min-width: 1636px) {
+@media only screen and (min-width: 1200px) {
   .container {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto;
-    margin: 0 400px 0 400px;
+    margin: 0 25% 0 25%;
     grid-template-areas:
     "nav"
     "main"
