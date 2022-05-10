@@ -64,7 +64,7 @@ $.ajax({
   url: bookUrl + genreShuffled + maxResults,
 }).then(
   (data) => {
-    $(`#genreH4`).html(`<h4 id="genreTitle">${sliced.replace(`_`, ` `)}</h4>`)
+    $(`#genreH4`).html(`<h3 id="genreTitle">${sliced.replace(`_`, ` `)}</h4>`)
     const loop = (data) => {for (let i = 0; i < data.items.length; i++) {
       const bookImg = () => {
         if (data.items[i].volumeInfo.imageLinks) {
@@ -124,7 +124,7 @@ $(document).on(`click`, `#btnGenerate`, () => {
     url: bookUrl + genreShuffled + maxResults,
   }).then(
     (data) => {
-      $(`#genreH4`).html(`<h4 id="genreTitle">${sliced.replace(`_`, ` `)}</h4>`)
+      $(`#genreH4`).html(`<h3 id="genreTitle">${sliced.replace(`_`, ` `)}</h4>`)
       $outputList.empty();
       const loop = (data) => {for (let i = 0; i < data.items.length; i++) {
         const bookImg = () => {
