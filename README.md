@@ -17,7 +17,7 @@ Randomly generates Books by Genre from Google's Book API by Newest. It pulls the
 
 <p align="center"><img src="https://i.imgur.com/EH8Cr9O.png"></p>
 
-- Hitting the Generate button randomly generates a new list of Books of a random Genre.
+<p align="center">- Hitting the Generate button randomly generates a new list of Books of a random Genre.</p>
 
 <p align="center"><img src="https://i.imgur.com/lrtUuBG.png"></p>
 
