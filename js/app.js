@@ -1,7 +1,7 @@
 const bookUrl = `https://www.googleapis.com/books/v1/volumes?q=`
 const maxResults = `&maxResults=25`
 const key = `&key=AIzaSyA2fp1D9TrSW7x5WJy_gOEkk5ANBF7xS6o`
-const placeHldr = `<img src="https://via.placeholder.com/128">`
+const placeHldr = `<img src="https://via.placeholder.com/128" class="center">`
 const $outputList = $(`#bookList`);
 
 // List of Genre's as elements in an Array
@@ -63,7 +63,7 @@ $.ajax({
     const loop = (data) => {for (let i = 0; i < data.items.length; i++) {
       const bookImg = () => {
         if (data.items[i].volumeInfo.imageLinks) {
-          return `<img src="${data.items[i].volumeInfo.imageLinks.thumbnail}" class="card-img" alt="...">`
+          return `<img src="${data.items[i].volumeInfo.imageLinks.thumbnail}" class="center" alt="...">`
         } else {
           return placeHldr;
         }
@@ -73,13 +73,13 @@ $.ajax({
       const publisher = data.items[i].volumeInfo.publisher;
       const viewUrl = data.items[i].volumeInfo.infoLink;
       $outputList.append(`
-      <td>
+      <td width="128">
       <a target="_blank" href="${viewUrl}">${bookImg()}</a><br><br>
-        ${title}<br>
+        "${title}"<br><br>
         Author: ${author}<br>
         Publisher: ${publisher}<br>
         <a target="_blank" href="${viewUrl}">Read Book</a>
-        <br><br>
+        <br><br><br>
       </td>
     `)
     }
@@ -124,7 +124,7 @@ $(document).on(`click`, `#btnGenerate`, () => {
       const loop = (data) => {for (let i = 0; i < data.items.length; i++) {
         const bookImg = () => {
           if (data.items[i].volumeInfo.imageLinks) {
-            return `<img src="${data.items[i].volumeInfo.imageLinks.thumbnail}" class="card-img" alt="...">`
+            return `<img src="${data.items[i].volumeInfo.imageLinks.thumbnail}" class="center" alt="...">`
           } else {
             return placeHldr;
           }
@@ -134,13 +134,13 @@ $(document).on(`click`, `#btnGenerate`, () => {
         const publisher = data.items[i].volumeInfo.publisher;
         const viewUrl = data.items[i].volumeInfo.infoLink;
         $outputList.append(`
-          <td>
+          <td width="128">
             <a target="_blank" href="${viewUrl}">${bookImg()}</a><br><br>
-            ${title}<br>
+            "${title}"<br><br>
             Author: ${author}<br>
             Publisher: ${publisher}<br>
             <a target="_blank" href="${viewUrl}">Read Book</a>
-            <br><br>
+            <br><br><br>
           </td>
         `)
       }
