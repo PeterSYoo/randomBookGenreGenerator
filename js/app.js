@@ -1,6 +1,6 @@
 const bookUrl = `https://www.googleapis.com/books/v1/volumes?q=`
 const maxResults = `&maxResults=25`
-const key = `&key=AIzaSyA2fp1D9TrSW7x5WJy_gOEkk5ANBF7xS6o`
+// const key = `&key=AIzaSyA2fp1D9TrSW7x5WJy_gOEkk5ANBF7xS6o`
 const placeHldr = `<img src="https://via.placeholder.com/128" class="center">`
 const $outputList = $(`#bookList`);
 
@@ -56,7 +56,7 @@ const sliced = genreShuffled.slice(
 
 // On page load
 $.ajax({
-  url: bookUrl + genreShuffled + maxResults + key,
+  url: bookUrl + genreShuffled + maxResults,
 }).then(
   (data) => {
     $(`#genreH4`).html(`<h4 id="genreTitle">${sliced.replace(`_`, ` `)}</h4>`)
@@ -116,7 +116,7 @@ $(document).on(`click`, `#btnGenerate`, () => {
     genreShuffled.lastIndexOf(`&`),
   )
   $.ajax({
-    url: bookUrl + genreShuffled + maxResults + key,
+    url: bookUrl + genreShuffled + maxResults,
   }).then(
     (data) => {
       $(`#genreH4`).html(`<h4 id="genreTitle">${sliced.replace(`_`, ` `)}</h4>`)
