@@ -13,14 +13,16 @@ Randomly generates Books by Genre from Google's Book API by Newest. It pulls the
 - Google Books API
 
 ## Screenshots:
+<center><img src="https://i.imgur.com/8Qsy2mQ.png"></center>
 
-![alt text](https://i.imgur.com/8Qsy2mQ.png)
-> Hitting the Generate button randomly generates a new list of Books of a random Genre.
-![alt text](https://i.imgur.com/EH8Cr9O.png)
+<center><img src="https://i.imgur.com/EH8Cr9O.png"></center>
 
-> New List of a random Genre after pressing the button.
-![alt text](https://i.imgur.com/lrtUuBG.png)
+- Hitting the Generate button randomly generates a new list of Books of a random Genre.
 
+<center><img src="https://i.imgur.com/lrtUuBG.png"></center>
+
+- New List of a random Genre after pressing the button.
+</p>
 
 ## Getting Started:
 
