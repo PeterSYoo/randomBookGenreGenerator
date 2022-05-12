@@ -44,7 +44,7 @@ const shuffle = (array) => {
   while(--i > 0) {
                          // lets say 3
     // Return largest # of (0 through 7)
-    k = Math.floor(Math.random() * (i+1));
+    k = Math.floor(Math.random() * i);
     // k = 3
     //       [3]
     temp = array[k];
@@ -144,7 +144,7 @@ $(document).on(`click`, `#btnGenerate`, () => {
     while(--i > 0) {
                           // lets say 3
       // Return largest # of (0 through 7)
-      k = Math.floor(Math.random() * (i+1));
+      k = Math.floor(Math.random() * i);
       // k = 3
       //       [3]
       temp = array[k];
