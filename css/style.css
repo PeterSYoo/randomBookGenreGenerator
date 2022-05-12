@@ -33,13 +33,13 @@ html, body {
 }
 
 .title {
-  z-index: 1;
   grid-area: title;
   background-color: #423f3b;
   border-radius:var(--main-radius);
   padding:var(--nav-padding);
   font-family: 'Trocchi', serif;
-  color: #cbbeb5;
+  /* color: #cbbeb5; */
+  color: #ffe8d7;
   font-size: 30px;
   letter-spacing: -2px;
   justify-self: start;
@@ -55,14 +55,14 @@ html, body {
   border-radius: 5px 5px 5px 5px;
   justify-self: end;
   align-self: end;
-  position:relative;
+  position: relative;
   padding: 15px 0 15px 30px;
   margin: 0 15px 0 0;
 }
 
 #btnGenerate {
   background-color: #525266;
-  color: #cbbeb5;
+  color: #ffe8d7;
   font-family: 'Trocchi', serif;
   font-size: 15px;
   letter-spacing: 0px;
@@ -71,16 +71,13 @@ html, body {
 .ribbon {
   z-index: -1;
   right: 40px;
-  top: 15px;
+  top: 25px;
   position: relative;
   width: 0px;
   height: 35px;
   background-color: transparent;
-  border: solid 15px #B13A22;
-  border-bottom: solid 15px transparent;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  transition: all 0.2s;
+  border: 15px solid #cd3945;
+  border-bottom: 10px solid transparent;
 }
 
 .container > main {

@@ -1,6 +1,6 @@
 const bookUrl = `https://www.googleapis.com/books/v1/volumes?q=`
 const maxResults = `&maxResults=25`
-const placeHldr = `<img src="https://via.placeholder.com/128" class="center">`
+const placeHldr = `<img src="https://via.placeholder.com/128">`
 const $outputList = $(`#bookList`);
 
 // List of Genre's as Elements in an Array
@@ -35,28 +35,42 @@ const genre = [
 // Shuffles the Genre Array
 const shuffle = (array) => {
   let i = array.length;
+  // sample array [`apple`, `orange`, `banana`, `lemon`, `peach`, `mango`, `grapes`, `pineapple`]
+  // i = 8
   let k; // generate random index
   let temp; // swap them
-  // i = 8
   // if 7 is greater than 0 run loop
   // i decreses by 1 each loop
   while(--i > 0) {
                          // lets say 3
-    // Return largest # of (0 through 8)
+    // Return largest # of (0 through 7)
     k = Math.floor(Math.random() * (i+1));
     // k = 3
-    // [`apple`, `orange`, `banana`, `lemon`, `peach`, `mango`, `grapes`, `pineapple`] sample array
     //       [3]
     temp = array[k];
     // temp is now [3]
     array[k] = array[i];
-    // [3] is overwritten by [7]
+    // [3] is swapped by [7]
     // [`apple`, `orange`, `banana`, `pineapple`, `peach`, `mango`, `grapes`, `pineapple`]
     array[i] = temp;
-    // [7] is overwritten by [3]
+    // [7] is swapped by [3]
     // [`apple`, `orange`, `banana`, `pineapple`, `peach`, `mango`, `grapes`, `lemon`]
   }
-  // it does this until --i = 0 then the loop stops
+    // Loop 2
+    // temp is now [4]
+    // [4] is swapped by [6]
+    // [`apple`, `orange`, `banana`, `pineapple`, `grapes`, `mango`, `grapes`, `lemon`]
+    // [6] is swapped by [4]
+    // [`apple`, `orange`, `banana`, `pineapple`, `peach`, `mango`, `peach`, `lemon`]
+
+    // Loop 3
+    // temp is now [2]
+    // [2] is swapped by [5]
+    // [`apple`, `orange`, `mango`, `pineapple`, `peach`, `mango`, `peach`, `lemon`]
+    // [5] is swapped by [2]
+    // [`apple`, `orange`, `mango`, `pineapple`, `peach`, `banana`, `peach`, `lemon`]
+
+    // it does this until --i = 0 then the loop stops
   return array
 }
 
@@ -80,13 +94,13 @@ $.ajax({
 }).then(
   (data) => {
     // Removes the "_" in the subject string and replaces it with an empty space
-    $(`#genreH4`).html(`<h3 id="genreTitle">${sliced.replace(`_`, ` `)}</h4>`)
+    $(`#genreHeader`).html(`<h3 id="genreTitle">${sliced.replace(`_`, ` `)}</h4>`)
     // Loops through the length of the Object from the API
     const loop = (data) => {for (let i = 0; i < data.items.length; i++) {
       // If Book Cover image is not available, place a Placeholder image instead
       const bookImg = () => {
         if (data.items[i].volumeInfo.imageLinks) {
-          return `<img src="${data.items[i].volumeInfo.imageLinks.thumbnail}" class="center">`
+          return `<img src="${data.items[i].volumeInfo.imageLinks.thumbnail}">`
         } else {
           return placeHldr;
         }
@@ -121,27 +135,42 @@ $(document).on(`click`, `#btnGenerate`, () => {
   // Shuffles the Genre Array
   const shuffle = (array) => {
     let i = array.length;
+    // sample array [`apple`, `orange`, `banana`, `lemon`, `peach`, `mango`, `grapes`, `pineapple`]
+    // i = 8
     let k; // generate random index
     let temp; // swap them
-    // i = 8
     // if 7 is greater than 0 run loop
     // i decreses by 1 each loop
     while(--i > 0) {
-                           // lets say 3
-      // Return largest # of (0 through 8)
+                          // lets say 3
+      // Return largest # of (0 through 7)
       k = Math.floor(Math.random() * (i+1));
       // k = 3
       //       [3]
       temp = array[k];
       // temp is now [3]
       array[k] = array[i];
-      // [3] is overwritten by [7]
+      // [3] is swapped by [7]
       // [`apple`, `orange`, `banana`, `pineapple`, `peach`, `mango`, `grapes`, `pineapple`]
       array[i] = temp;
-      // [7] is overwritten by [3]
+      // [7] is swapped by [3]
       // [`apple`, `orange`, `banana`, `pineapple`, `peach`, `mango`, `grapes`, `lemon`]
     }
-    // it does this until --i = 0 then the loop stops
+      // Loop 2
+      // temp is now [4]
+      // [4] is swapped by [6]
+      // [`apple`, `orange`, `banana`, `pineapple`, `grapes`, `mango`, `grapes`, `lemon`]
+      // [6] is swapped by [4]
+      // [`apple`, `orange`, `banana`, `pineapple`, `peach`, `mango`, `peach`, `lemon`]
+
+      // Loop 3
+      // temp is now [2]
+      // [2] is swapped by [5]
+      // [`apple`, `orange`, `mango`, `pineapple`, `peach`, `mango`, `peach`, `lemon`]
+      // [5] is swapped by [2]
+      // [`apple`, `orange`, `mango`, `pineapple`, `peach`, `banana`, `peach`, `lemon`]
+      
+      // it does this until --i = 0 then the loop stops
     return array
   }
 
@@ -163,13 +192,13 @@ $(document).on(`click`, `#btnGenerate`, () => {
   }).then(
     (data) => {
       // Removes the "_" in the subject string and replaces it with an empty space
-      $(`#genreH4`).html(`<h3 id="genreTitle">${sliced.replace(`_`, ` `)}</h4>`)
+      $(`#genreHeader`).html(`<h3 id="genreTitle">${sliced.replace(`_`, ` `)}</h4>`)
       $outputList.empty();
       // If Book Cover image is not available, place a Placeholder image instead
       const loop = (data) => {for (let i = 0; i < data.items.length; i++) {
         const bookImg = () => {
           if (data.items[i].volumeInfo.imageLinks) {
-            return `<img src="${data.items[i].volumeInfo.imageLinks.thumbnail}" class="center">`
+            return `<img src="${data.items[i].volumeInfo.imageLinks.thumbnail}">`
           } else {
             return placeHldr;
           }
