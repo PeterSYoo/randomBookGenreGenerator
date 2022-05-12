@@ -26,3 +26,9 @@ Randomly generates Books by Genre from Google's Book API by Newest. It pulls the
 ## Getting Started:
 
 <a href="https://resplendent-semifreddo-3124d4.netlify.app/" target="_blank">Link to App</a>
+
+## Citations:
+
+Responsive CSS Grid Tutorial: [Link](https://www.youtube.com/watch?v=68O6eOGAGqA)<br>
+Fisher-Yates Shuffle: [Link](https://bost.ocks.org/mike/shuffle/)<br>
+Ribbon: [Link](https://codepen.io/Magns/pen/QpbjEe)
