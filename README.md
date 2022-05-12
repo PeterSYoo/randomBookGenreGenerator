@@ -13,7 +13,7 @@ Randomly generates Books by Genre from Google's Book API by Newest. It pulls the
 - Google Books API
 
 ## Screenshots:
-<p align="center"><img src="https://i.imgur.com/vXsqjWQ.png"></p>
+<p align="center"><img src="https://i.imgur.com/E59UdTB.png"></p>
 
 <p align="center"><img src="https://i.imgur.com/AwpPgvn.png"></p>
 
