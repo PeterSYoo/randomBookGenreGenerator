@@ -45,6 +45,7 @@ const shuffle = (array) => {
     // Return largest # of (0 through 8)
     k = Math.floor(Math.random() * (i+1));
     // k = 3
+    // [`apple`, `orange`, `banana`, `lemon`, `peach`, `mango`, `grapes`, `pineapple`] sample array
     //       [3]
     temp = array[k];
     // temp is now [3]
