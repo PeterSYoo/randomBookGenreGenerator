@@ -79,7 +79,7 @@ $.ajax({
   (data) => {
     // Removes the "_" in the subject string and replaces it with an empty space
     $(`#genreHeader`).html(`<h3 id="genreTitle">${sliced.replace(`_`, ` `)}</h4>`)
-    // Loops through the length of the Object from the API
+    // Loops through the Object inside the API
     const loop = (data) => {for (let i = 0; i < data.items.length; i++) {
       // If Book Cover image is not available, place a Placeholder image instead
       const bookImg = () => {
@@ -161,8 +161,9 @@ $(document).on(`click`, `#btnGenerate`, () => {
       // Removes the "_" in the subject string and replaces it with an empty space
       $(`#genreHeader`).html(`<h3 id="genreTitle">${sliced.replace(`_`, ` `)}</h4>`)
       $outputList.empty();
-      // If Book Cover image is not available, place a Placeholder image instead
+      // Loops through the Object inside the API
       const loop = (data) => {for (let i = 0; i < data.items.length; i++) {
+        // If Book Cover image is not available, place a Placeholder image instead
         const bookImg = () => {
           if (data.items[i].volumeInfo.imageLinks) {
             return `<img src="${data.items[i].volumeInfo.imageLinks.thumbnail}">`
