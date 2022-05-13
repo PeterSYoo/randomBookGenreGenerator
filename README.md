@@ -25,7 +25,7 @@ Randomly generates Books by Genre from Google's Book API by Newest. It pulls the
 
 ## Getting Started:
 
-<a href="https://resplendent-semifreddo-3124d4.netlify.app/" target="_blank">Link to App</a>
+Link to App: [https://randomlit.netlify.app/](https://randomlit.netlify.app/)
 
 ## Citations:
 
