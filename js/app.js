@@ -33,45 +33,29 @@ const genre = [
 ]
 
 // Shuffles the Genre Array
+// Sample arr = [1,2,3,4,5,6,7,8]
 const shuffle = (array) => {
-  let i = array.length;
-  // sample array [`apple`, `orange`, `banana`, `lemon`, `peach`, `mango`, `grapes`, `pineapple`]
-  // i = 8
-  let k; // generate random index
-  let temp; // swap them
-  // if 7 is greater than 0 run loop
-  // i decreses by 1 each loop
-  while(--i > 0) {
-                         // lets say 3
-    // Return largest # of (0 through 7)
-    k = Math.floor(Math.random() * i);
-    // k = 3
-    //       [3]
-    temp = array[k];
-    // temp is now [3]
-    array[k] = array[i];
-    // [3] is swapped by [7]
-    // [`apple`, `orange`, `banana`, `pineapple`, `peach`, `mango`, `grapes`, `pineapple`]
-    array[i] = temp;
-    // [7] is swapped by [3]
-    // [`apple`, `orange`, `banana`, `pineapple`, `peach`, `mango`, `grapes`, `lemon`]
+  let m = array.length;
+  let t;
+  let i;
+  // m = 8
+  // Once m hits 0 it stops the loop since 0 returns a false boolean
+  while (m) {
+                                            // let's say [3]
+    // returns the largest integer(of a random number from 0 to 7)
+    i = Math.floor(Math.random() * m--);
+    // i is now [3]
+    // Loop keeps going until m-- updates the loop paramenter to 0
+
+    // t is now [7]
+    t = array[m];
+    // [7] gets swapped with [3]
+    array[m] = array[i];
+    // [3] gets swapped wth [7]
+    array[i] = t;
+    // Loop keeps going until m = 0. The last index position of each iteration is left alone while the rest gets shuffled. The last index position decrements by 1 each iteration.
   }
-    // Loop 2
-    // temp is now [4]
-    // [4] is swapped by [6]
-    // [`apple`, `orange`, `banana`, `pineapple`, `grapes`, `mango`, `grapes`, `lemon`]
-    // [6] is swapped by [4]
-    // [`apple`, `orange`, `banana`, `pineapple`, `peach`, `mango`, `peach`, `lemon`]
-
-    // Loop 3
-    // temp is now [2]
-    // [2] is swapped by [5]
-    // [`apple`, `orange`, `mango`, `pineapple`, `peach`, `mango`, `peach`, `lemon`]
-    // [5] is swapped by [2]
-    // [`apple`, `orange`, `mango`, `pineapple`, `peach`, `banana`, `peach`, `lemon`]
-
-    // it does this until --i = 0 then the loop stops
-  return array
+  return array;
 }
 
 // Returns the first index position of the Shuffled Array
@@ -132,46 +116,29 @@ $.ajax({
 
 // Clicking Generate button randomly generates Books
 $(document).on(`click`, `#btnGenerate`, () => {
-  // Shuffles the Genre Array
+  // Sample arr = [1,2,3,4,5,6,7,8]
   const shuffle = (array) => {
-    let i = array.length;
-    // sample array [`apple`, `orange`, `banana`, `lemon`, `peach`, `mango`, `grapes`, `pineapple`]
-    // i = 8
-    let k; // generate random index
-    let temp; // swap them
-    // if 7 is greater than 0 run loop
-    // i decreses by 1 each loop
-    while(--i > 0) {
-                          // lets say 3
-      // Return largest # of (0 through 7)
-      k = Math.floor(Math.random() * i);
-      // k = 3
-      //       [3]
-      temp = array[k];
-      // temp is now [3]
-      array[k] = array[i];
-      // [3] is swapped by [7]
-      // [`apple`, `orange`, `banana`, `pineapple`, `peach`, `mango`, `grapes`, `pineapple`]
-      array[i] = temp;
-      // [7] is swapped by [3]
-      // [`apple`, `orange`, `banana`, `pineapple`, `peach`, `mango`, `grapes`, `lemon`]
+    let m = array.length;
+    let t;
+    let i;
+    // m = 8
+    // Once m hits 0 it stops the loop since 0 returns a false boolean
+    while (m) {
+                                              // let's say [3]
+      // returns the largest integer(of a random number from 0 to 7)
+      i = Math.floor(Math.random() * m--);
+      // i is now [3]
+      // Loop keeps going until m-- updates the loop paramenter to 0
+  
+      // t is now [7]
+      t = array[m];
+      // [7] gets swapped with [3]
+      array[m] = array[i];
+      // [3] gets swapped wth [7]
+      array[i] = t;
+      // Loop keeps going until m = 0. The last index position of each iteration is left alone while the rest gets shuffled. The last index position decrements by 1 each iteration.
     }
-      // Loop 2
-      // temp is now [4]
-      // [4] is swapped by [6]
-      // [`apple`, `orange`, `banana`, `pineapple`, `grapes`, `mango`, `grapes`, `lemon`]
-      // [6] is swapped by [4]
-      // [`apple`, `orange`, `banana`, `pineapple`, `peach`, `mango`, `peach`, `lemon`]
-
-      // Loop 3
-      // temp is now [2]
-      // [2] is swapped by [5]
-      // [`apple`, `orange`, `mango`, `pineapple`, `peach`, `mango`, `peach`, `lemon`]
-      // [5] is swapped by [2]
-      // [`apple`, `orange`, `mango`, `pineapple`, `peach`, `banana`, `peach`, `lemon`]
-      
-      // it does this until --i = 0 then the loop stops
-    return array
+    return array;
   }
 
   // Returns the first index position of the Shuffled Array
